@@ -38,7 +38,7 @@ class BusinessController extends Controller
 
     public function store(Request $request)
     {
-        $this->authorize('limit', $business);
+        // $this->authorize('limit', $business);
 
         $request->validate([
             'name' => 'required | max:200',
