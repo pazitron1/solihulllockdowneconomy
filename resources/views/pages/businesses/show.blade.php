@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="w-full max-w-20 md:max-w-auto md:w-1/2">
-                    <img class="object-cover h-full w-full shadow-md object-cover rounded-t-lg md:rounded-r-lg shadow" src="{{asset($business->imagePath())}}" alt="{{$business->name}}">
+                    <img class="object-cover h-full w-full shadow-md object-cover rounded-tr-lg md:rounded-r-lg shadow" src="{{asset($business->imagePath())}}" alt="{{$business->name}}">
                 </div>
             </div>
 
