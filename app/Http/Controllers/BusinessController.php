@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use File;
 use Auth;
 use Carbon\Carbon;
 use App\Category;
@@ -54,6 +55,31 @@ class BusinessController extends Controller
             'image_path' => 'required | mimes:jpeg,png,svg | max:1024'
         ]);
 
+        // $business = Business::create([
+        //     'name' => request('name'),
+        //     'description' => request('description'),
+        //     'product_info' => request('product_info'),
+        //     'delivery_info' => request('delivery_info'),
+        //     'category_id' => request('category_id'),
+        //     'link' => request('link'),
+        //     'address_one' => request('address_one'),
+        //     'address_two' => request('address_two'),
+        //     'town' => request('town'),
+        //     'postcode' => request('postcode'),
+        //     'user_id' => auth()->id(),
+        //     'image_path' => request()->file('image_path')->store('images/' . Auth::user()->slug, 'public'),
+        // ]);
+
+        // if($request['owner']) {
+        //     $business = new Business();
+        //     $business->owner = true;
+        //     $business->save();
+        // } else {
+        //     $business = new Business();
+        //     $business->owner = false;
+        //     $business->save();
+        // }
+
         $business = new Business();
 
         $business->name = request('name');
@@ -68,13 +94,8 @@ class BusinessController extends Controller
         $business->postcode = request('postcode');
         $business->user_id = auth()->id();
         //Image upload
-        if ($request->hasFile('image_path')) {
-            $imagePath = $request->file('image_path');
-            $imageName = time() . '.' . $imagePath ->getClientOriginalExtension();
+        $business->image_path = request()->file('image_path')->store('images/' . Auth::user()->slug, 'public');
 
-            $imagePath->move('uploads/' . Auth::user()->slug, $imageName );
-            $business->image_path = $imageName ;
-        };
         //Ownership checkbox
         if($request['owner']) {
             $business->owner = true;

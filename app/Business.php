@@ -12,9 +12,7 @@ class Business extends Model
 {
     use HasSlug;
 
-    protected $guarded = [
-        'id'
-    ];
+    protected $guarded = [];
 
     /**
      * Get the options for generating the slug.
@@ -63,6 +61,6 @@ class Business extends Model
     {
         $owner = User::where('slug', $this->user->slug)->first();
 
-        return "uploads/" . $owner->slug . "/" . $this->image_path;
+        return "storage/" . $this->image_path;
     }
 }
