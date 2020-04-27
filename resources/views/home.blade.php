@@ -24,7 +24,7 @@
 <section class="md:w-11/12 mx-auto px-4 sm:px-6 lg:px-8 my-16 md:my-32">
     <div class="sm:text-center lg:text-left">
         <h1 class="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-5xl">
-            Discover Solihull's best indie busineses
+            Discover Solihull's best indie businesses
             <br class="xl:block hidden" />
                 <span class="text-indigo-600">offering products & services during lockdown</span>
         </h1>
