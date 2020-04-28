@@ -34,7 +34,7 @@
     <section class="md:w-11/12 mx-auto px-4 sm:px-6 lg:px-8 py-16 md:pb-32 flex cursor-pointer flex-wrap">
         <form class="md:flex border border-gray-200 shadow-md rounded-lg p-10 bg-white" action="{{route('recommend.store')}}" method="POST">
                 @csrf()
-                <div class="w-1/2 md:mr-10">
+                <div class="w-full md:w-1/2 md:mr-10">
                     <div class="mb-8 relative">
                         <label class="text-sm text-gray-800 mb-2 pl-1 block" for="name">Your name</label>
                         <input class="appearance-none placeholder-gray-500 text-sm text-gray-800 block w-full px-3 py-2 border border-gray-400 rounded-lg focus:outline-none focus:border-indigo-600 @error('name') border-red-500 @enderror" placeholder="John Doe" type="text" name="name" value="{{old('name')}}">
@@ -83,7 +83,7 @@
                     </div>
                 </div>
 
-                <div class="w-1/2 md:ml-10">
+                <div class="w-full md:w-1/2 md:ml-10">
                     <div class="mb-8 relative">
                         <label class="text-sm text-gray-800 mb-1 pl-1 block" for="product_info">The lockdown offer</label>
                         <span class="pl-1 mb-2 text-gray-500 text-sm">
