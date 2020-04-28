@@ -36,10 +36,10 @@
     <section class="mb-40">
         <section class="md:w-11/12 mx-auto px-4 sm:px-6 lg:px-8 my-16 md:my-32">
             <div class="sm:max-w-xl">
-                <p class="text-base text-gray-600 mb-4">Hi, my name is Anton, I am a Digital Marketing professional by day☀️ and a web developer by night.🌙 </p>
+                <p class="text-base text-gray-600 mb-4">Hi, my name is <a class="underline" href="https://www.linkedin.com/in/antonsirik/" target="_blank">Anton</a>, I am a Digital Marketing professional by day☀️ and a web developer by night.🌙 </p>
                 <p class="text-base text-gray-600 mb-4">At the start of the lockdown I came across <a class="underline" href="https://www.edinburghlockdowneconomy.com/about" target="_blank">the Edinburgh Lockdown Economy</a> website which was designed to help local businesses during the lockdown. It inspired me to do something similar here, in Solihull.</p>
                 <p class="text-base text-gray-600 mb-4">The Solihull Lockdown Economy aims to help Solihull local independent businesses spread the word about the products and services they offer during the lockdown. I hope this site will become the-go-to resource for finding great local alternatives to supermarket and big brand chains.</p>
-                <p class="text-base text-gray-600">If you have a local business or want to recommend one, please give us a shot on the <a class="underline cursor-pointer" href="{{route('contact.show')}}">contact us page.</a></p>
+                <p class="text-base text-gray-600">If you have a local business or want to recommend one, please give us a shot on the <a class="underline cursor-pointer" href="{{route('contact.create')}}">contact us page.</a></p>
             </div>
         </section>
     </section>

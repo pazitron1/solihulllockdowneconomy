@@ -12,7 +12,7 @@
                         <div class="ml-0 md:ml-10 flex items-baseline">
                             <a href="{{route('businesses.index')}}" class="ml-1 md:ml-4 nav-item md:text-base">Discover</a>
                             <a href="{{route('about')}}" class="ml-1 md:ml-4 nav-item md:text-base">About</a>
-                            <a href="{{route('contact.show')}}" class="ml-1 md:ml-4 nav-item md:text-base">Contact us</a>
+                            <a href="{{route('contact.create')}}" class="ml-1 md:ml-4 nav-item md:text-base">Contact us</a>
                         </div>
                     </div>
                 </div>
@@ -82,7 +82,7 @@
                     Discover
                 </a>
                 <a href="{{route('about')}}" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-indigo-200 focus:outline-none">About</a>
-                <a href="{{route('contact.show')}}" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-indigo-200 focus:outline-none">Contact us</a>
+                <a href="{{route('contact.create')}}" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-indigo-200 focus:outline-none">Contact us</a>
             </div>
             <div class="pt-4 pb-3 border-t border-indigo-500">
                 @auth

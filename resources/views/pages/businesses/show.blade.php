@@ -40,7 +40,7 @@
             </div>
 
             <div class="mt-6">
-                <span class="text-xs md:text-sm text-gray-500">Something does not look right? <a href="" class="text-indigo-500 hover:text-indigo-700">Let us know</a></span>
+                <span class="text-xs md:text-sm text-gray-500">Something does not look right? <a href="{{route('contact.create')}}" class="text-indigo-500 hover:text-indigo-700">Let us know</a></span>
             </div>
 
     </div>

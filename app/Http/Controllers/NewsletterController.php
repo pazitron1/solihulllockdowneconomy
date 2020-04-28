@@ -23,8 +23,8 @@ class NewsletterController extends Controller
         return back()->with('warning', 'This emails is already subscribed');
     }
 
-    public function show()
+    public function create()
     {
-        return view('pages.newsletter.show');
+        return view('pages.newsletter.create');
     }
 }

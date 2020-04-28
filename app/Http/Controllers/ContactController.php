@@ -9,9 +9,9 @@ use App\Mail\ContactUsSubmitted;
 
 class ContactController extends Controller
 {
-    public function show()
+    public function create()
     {
-        return view('pages.contact.show');
+        return view('pages.contact.create');
     }
 
     public function store(Request $request)

@@ -39,5 +39,14 @@
         </div>
 
         {{$listings->links('vendor.pagination.simple-default')}}
+
+        <div class="md:w-11/12 mx-auto pr-0 px-6 lg:px-8 py-8 md:py-12">
+            <div class="flex flex-col md:flex-row mx-auto items-center justify-center">
+                <p class="text-base text-gray-400 mb-4 md:mr-4 md:mb-0">Are we missing anything?</p>
+                <div class="">
+                     <a href="{{route('recommend.create')}}" class="border border-transparent text-sm leading-6 font-medium rounded-md text-indigo-700 bg-indigo-100 hover:text-indigo-600 hover:bg-indigo-50 focus:outline-none focus:shadow-outline focus:border-indigo-300 transition duration-150 ease-in-out py-2 px-4 md:py-3 md:text-base md:px-6">Recommend a business</a>
+                </div>
+            </div>
+        </div>
     </div>
 @endsection

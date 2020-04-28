@@ -18,11 +18,14 @@ Route::get('businesses', 'BusinessController@index')->name('businesses.index');
 Route::get('businesses/{category}', 'BusinessController@index')->name('category.businesses.index');
 Route::get('businesses/{category}/{business}', 'BusinessController@show')->name('businesses.show');
 Route::get('about', 'PagesController@about')->name('about');
-Route::get('contact', 'ContactController@show')->name('contact.show');
+Route::get('contact', 'ContactController@create')->name('contact.create');
 Route::post('contact', 'ContactController@store')->name('contact.store');
 
-Route::get('newsletter', 'NewsletterController@show')->name('newsletter.show');
+Route::get('newsletter', 'NewsletterController@create')->name('newsletter.create');
 Route::post('newsletter', 'NewsletterController@store')->name('newsletter.store');
+
+Route::get('recommend-business', 'RecommendationController@create')->name('recommend.create');
+Route::post('recommend-business', 'RecommendationController@store')->name('recommend.store');
 
 Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function()
 {
