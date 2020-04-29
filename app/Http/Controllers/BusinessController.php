@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Image;
 use File;
 use Auth;
 use Carbon\Carbon;
 use App\Category;
 use App\Business;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class BusinessController extends Controller
 {
@@ -93,8 +95,19 @@ class BusinessController extends Controller
         $business->town = request('town');
         $business->postcode = request('postcode');
         $business->user_id = auth()->id();
+
         //Image upload
-        $business->image_path = request()->file('image_path')->store('images/' . Auth::user()->slug, 'public');
+        $image = Image::make($request->file('image_path'));
+        $image->fit(1280, 768);
+        $path_for_db = 'images/' . Auth::user()->slug . '/' . Carbon::now()->format('YmdHs') . '.' . $request->file('image_path')
+                    ->getClientOriginalExtension();
+        $path_for_storage = 'public//' . $path_for_db;
+
+        Storage::put($path_for_storage, $image->stream(), 'public');
+
+        $business->image_path = $path_for_db;
+
+        // $business->image_path = $image->encode()->store('images/' . Auth::user()->slug, 'public');
 
         //Ownership checkbox
         if($request['owner']) {
