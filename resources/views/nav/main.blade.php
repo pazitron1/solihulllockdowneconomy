@@ -2,22 +2,26 @@
     <nav :class="{'block bg-indigo-600': open, 'bg-white shadow': !open}">
         <div class="md:w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
-                <div>
-                    <a href="/" class="flex-shrink-0">
-                        <img class="w-44 hover:opacity-75" src="{{asset('/logos/solihulllockdowneconomy-full.svg')}}" alt="Solihull Lockdown Economy" />
+                <div class="flex items-center">
+                    <a href="/" class="flex-shrink-0 mr-2">
+                        <img class="w-10 hover:opacity-75" src="{{asset('/logos/logo.png')}}" alt="Solihull Lockdown Economy" />
                     </a>
+                    <div class="hidden md:block">
+                        <span class="block text-base font-semibold leading-none">Solihull</span>
+                        <span class="block text-sm font-semibold text-indigo-600 leading-none">lockdown economy</span>
+                    </div>
                 </div>
                 <div class="flex items-center">
                     <div class="hidden md:block">
-                        <div class="ml-0 md:ml-10 flex items-baseline">
-                            <a href="{{route('businesses.index')}}" class="ml-1 md:ml-4 nav-item md:text-base">Discover</a>
-                            <a href="{{route('about')}}" class="ml-1 md:ml-4 nav-item md:text-base">About</a>
-                            <a href="{{route('contact.create')}}" class="ml-1 md:ml-4 nav-item md:text-base">Contact us</a>
+                        <div class="ml-0 md:ml-2 flex items-baseline">
+                            <a href="{{route('businesses.index')}}" class="ml-1 nav-item">Discover</a>
+                            <a href="{{route('about')}}" class="ml-1 nav-item">About</a>
+                            <a href="{{route('contact.create')}}" class="ml-1 nav-item">Contact us</a>
                         </div>
                     </div>
                 </div>
                 <div class="hidden md:block">
-                    <div class="ml-4 md:ml-6">
+                    <div class="ml-2 md:ml-2">
                         @auth
                         <dropdown inline-template>
                             <div class="flex items-center">
@@ -59,8 +63,8 @@
                         </div>
                         @endauth
                         @guest
-                            <a href="{{route('login')}}" class="mr-4 nav-item">Sign in</a>
-                            <a href="{{route('register')}}" class="button-primary">List my business</a>
+                            <a href="{{route('login')}}" class="mr-2 nav-item">Sign in</a>
+                            <a href="{{route('register')}}" class="button-primary text-sm">List my business</a>
                         @endguest
                     </div>
                 </div>

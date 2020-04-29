@@ -1,9 +1,18 @@
 <div class="bg-indigo-500 w-full">
     <div class="md:w-11/12 mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
-        <a href="/" class="flex justify-center">
-            <img class="w-48 sm-w-32 hover:opacity-75" src="{{asset('/logos/solihull-lockdown-economy-logo-reverse.png')}}" alt="Solihull Lockdown Economy logo" />
+        <a href="/" class="flex justify-center hover:opacity-75">
+            <div class="flex items-center">
+                <div class="flex-shrink-0 mr-2">
+                    <img class="w-12 hover:opacity-75" src="{{asset('/logos/logo.png')}}" alt="Solihull Lockdown Economy" />
+                </div>
+                <div class="hidden md:block">
+                    <span class="block text-white text-base font-semibold leading-none">Solihull</span>
+                    <span class="block text-indigo-300 text-sm font-semibold leading-none">lockdown economy</span>
+                </div>
+            </div>
         </a>
+
         <div class="flex justify-center">
             <div class="my-10 block">
                 <div class="flex items-baseline">
