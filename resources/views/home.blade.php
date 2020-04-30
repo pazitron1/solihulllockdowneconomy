@@ -10,6 +10,7 @@
     <meta prefix="og: http://ogp.me/ns#" property="og:image" content="https://res.cloudinary.com/solihull-lockdown-economy/image/upload/dpr_auto,w_auto,f_auto,q_auto:good/v1588241085/SEO%20images/Home%20page/Social_media_banner_nqndzt.jpg" />
     <meta prefix="og: http://ogp.me/ns#" property="og:description" content="Independent businesses in Solihull offering products and services during lockdown. Fresh produce, ready meals, supplies, mental health help, fitness classes and shops and more!" />
     <meta  prefix="og: http://ogp.me/ns#" property="og:site_name" content="The Solihull Lockdown Economy" />
+    <meta property="fb:app_id" content="1207509819640694">
 
       <!-- Twitter META Tags -->
     <meta property="twitter:site" content="@solihulllock">
