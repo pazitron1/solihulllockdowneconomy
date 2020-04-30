@@ -1,6 +1,6 @@
 <a href="{{$business->path()}}" class="sm:mt-0 w-full sm:w-1/2 md:w-1/3 xl:w-1/4 px-2 pb-6">
     <div class="relative pb-5/6">
-        <img src="{{asset($business->imagePath())}}" alt="{{$business->category->name}}" class="h-64 w-full rounded-lg shadow-md object-cover">
+        <img src="{{asset($business->imagePath())}}" alt="{{$business->name}}" class="h-64 w-full rounded-lg shadow-md object-cover">
     </div>
     <div class="relative px-4 -mt-20">
         <div class="bg-white rounded-t-lg p-4 shadow-lg">

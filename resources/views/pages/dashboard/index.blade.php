@@ -83,7 +83,7 @@
                                         </h3>
                                         <div class="mt-2">
                                           <p class="text-sm leading-5 text-gray-500">
-                                            Are you sure you want to delete {{$business->name}} from the business directory? All of your data will be permanantly removed. This action cannot be undone.
+                                            Are you sure you want to delete {{$business->name}} from the business directory? All of your data will be permanently removed. This action cannot be undone.
                                           </p>
                                         </div>
                                       </div>

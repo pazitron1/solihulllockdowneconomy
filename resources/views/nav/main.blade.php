@@ -2,15 +2,15 @@
     <nav :class="{'block bg-indigo-600': open, 'bg-white shadow': !open}">
         <div class="md:w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
-                <div class="flex items-center">
-                    <a href="/" class="flex-shrink-0 mr-2">
-                        <img class="w-10 hover:opacity-75" src="{{asset('/logos/logo.png')}}" alt="Solihull Lockdown Economy" />
-                    </a>
-                    <div class="hidden md:block">
-                        <span class="block text-base font-semibold leading-none">Solihull</span>
-                        <span class="block text-sm font-semibold text-indigo-600 leading-none">lockdown economy</span>
+                <a href="/" class="flex items-center group hover:opacity-75">
+                    <div class="flex-shrink-0 mr-2">
+                        <img class="w-10 group-hover:opacity-75" src="{{asset('/logos/logo.png')}}" alt="Solihull Lockdown Economy" />
                     </div>
-                </div>
+                    <div class="hidden md:block">
+                        <span class="block text-base font-semibold leading-none group-hover:opacity-75">Solihull</span>
+                        <span class="block text-sm font-semibold text-indigo-600 leading-none group-hover:opacity-75">lockdown economy</span>
+                    </div>
+                </a>
                 <div class="flex items-center">
                     <div class="hidden md:block">
                         <div class="ml-0 md:ml-2 flex items-baseline">

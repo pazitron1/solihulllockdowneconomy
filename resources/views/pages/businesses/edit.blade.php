@@ -14,7 +14,7 @@
         <main>
           <div class="md:w-11/12 mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-xl mt-10 font-normal leading-tight text-gray-500">Editting {{$business->name}}</h2>
-            <form class="md:flex border border-gray-200 shadow-md rounded-lg mt-6 p-4 md:p-10 bg-white" action="{{route('businesses.update', $business)}}" method="POST">
+            <form class="md:flex border border-gray-200 shadow-md rounded-lg mt-6 p-4 md:p-10 bg-white" action="{{route('businesses.update', $business)}}" method="POST" enctype="multipart/form-data">
                 @csrf()
                 @method("PUT")
                 <div class="w-full w-1/2 md:mr-10">
@@ -25,20 +25,29 @@
                             <span class="absolute mt-1 text-red-500 text-sm">{{$message}}</span>
                         @enderror
                     </div>
-                        <div class="mb-8 relative">
-                          <label for="category" class="font-semibold md:font-normal text-xs md:text-sm text-gray-800 mb-2 pl-1 block">Category</label>
-                          <div class="relative">
-                            <select
-                                class="appearance-none placeholder-gray-500 text-xs md:text-sm text-gray-800 block w-full px-3 py-2 border border-gray-400 rounded-lg focus:outline-none focus:border-indigo-600 @error('name') border-red-500 @enderror"
-                                name="category_id">
-                                @foreach($categories as $category)
-                                  <option value="{{$category->id}}" {{ $category->id == $business->category_id ? 'selected' : '' }}>{{$category->name}}</option>
-                                @endforeach
-                            </select>
-                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                              <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                    <div class="mb-8 relative">
+                        <label class="font-semibold md:font-normal text-xs md:text-sm text-gray-800 mb-2 pl-1 block" for="image_path">Current image</label>
+                        <img class="w-32 md:w-64 rounded-lg" src="{{asset($business->imagePath())}}" alt="{{$business->name}}">
+                        <span class="font-semibold md:font-normal text-xs md:text-sm text-gray-800 mt-4 mb-2 pl-1 block" for="image_path">Want to update the image?</span>
+                        <span class="block pl-1 mb-2 text-gray-500 text-sm">
+                            .JPEG, .SVG or .PNG, max file size 1mb
+                        </span>
+                        <input class="block" type="file" name="image_path">
+                    </div>
+                    <div class="mb-8 relative">
+                        <label for="category" class="font-semibold md:font-normal text-xs md:text-sm text-gray-800 mb-2 pl-1 block">Category</label>
+                            <div class="relative">
+                                <select
+                                    class="appearance-none placeholder-gray-500 text-xs md:text-sm text-gray-800 block w-full px-3 py-2 border border-gray-400 rounded-lg focus:outline-none focus:border-indigo-600 @error('name') border-red-500 @enderror"
+                                    name="category_id">
+                                    @foreach($categories as $category)
+                                      <option value="{{$category->id}}" {{ $category->id == $business->category_id ? 'selected' : '' }}>{{$category->name}}</option>
+                                    @endforeach
+                                </select>
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                  <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                                </div>
                             </div>
-                        </div>
                         @error('category_id')
                             <span class="absolute mt-1 text-red-500 text-sm">{{$message}}</span>
                         @enderror
@@ -125,7 +134,7 @@
                     <div class="flex item-center">
                         <a href="{{route('dashboard.show')}}" class="w-full px-8 py-3 mr-4 border border-transparent text-base text-center leading-6 font-medium rounded-md text-indigo-700 bg-indigo-100 hover:text-indigo-600 hover:bg-indigo-50 focus:outline-none focus:shadow-outline focus:border-indigo-300 transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10">Cancel</a>
 
-                        <button type="submit" class="w-full px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10">Edit</button>
+                        <button type="submit" class="w-full px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10">Update</button>
                     </div>
                 </form>
           </div>

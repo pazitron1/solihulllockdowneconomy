@@ -24,7 +24,7 @@
 
 </head>
 <body class="font-main">
-    <div id="app">
+    <div id="app" v-cloak>
         @include('nav.main')
 
         <main>

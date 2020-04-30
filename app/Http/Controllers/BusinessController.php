@@ -57,31 +57,6 @@ class BusinessController extends Controller
             'image_path' => 'required | mimes:jpeg,png,svg | max:1024'
         ]);
 
-        // $business = Business::create([
-        //     'name' => request('name'),
-        //     'description' => request('description'),
-        //     'product_info' => request('product_info'),
-        //     'delivery_info' => request('delivery_info'),
-        //     'category_id' => request('category_id'),
-        //     'link' => request('link'),
-        //     'address_one' => request('address_one'),
-        //     'address_two' => request('address_two'),
-        //     'town' => request('town'),
-        //     'postcode' => request('postcode'),
-        //     'user_id' => auth()->id(),
-        //     'image_path' => request()->file('image_path')->store('images/' . Auth::user()->slug, 'public'),
-        // ]);
-
-        // if($request['owner']) {
-        //     $business = new Business();
-        //     $business->owner = true;
-        //     $business->save();
-        // } else {
-        //     $business = new Business();
-        //     $business->owner = false;
-        //     $business->save();
-        // }
-
         $business = new Business();
 
         $business->name = request('name');
@@ -101,13 +76,11 @@ class BusinessController extends Controller
         $image->fit(1280, 768);
         $path_for_db = 'images/' . Auth::user()->slug . '/' . Carbon::now()->format('YmdHs') . '.' . $request->file('image_path')
                     ->getClientOriginalExtension();
-        $path_for_storage = 'public//' . $path_for_db;
+        $path_for_storage = 'public/' . $path_for_db;
 
         Storage::put($path_for_storage, $image->stream(), 'public');
 
         $business->image_path = $path_for_db;
-
-        // $business->image_path = $image->encode()->store('images/' . Auth::user()->slug, 'public');
 
         //Ownership checkbox
         if($request['owner']) {
@@ -158,6 +131,21 @@ class BusinessController extends Controller
 
         $business->update($validatedData);
 
+        if ($request->hasFile('image_path')) {
+            $deletedFile = Storage::delete('public/' . $business->image_path);
+
+            $image = Image::make($request->file('image_path'));
+            $image->fit(1280, 768);
+            $path_for_db = 'images/' . Auth::user()->slug . '/' . Carbon::now()->format('YmdHs') . '.' . $request->file('image_path')
+                        ->getClientOriginalExtension();
+            $path_for_storage = 'public/' . $path_for_db;
+
+            Storage::put($path_for_storage, $image->stream(), 'public');
+
+            $business->image_path = $path_for_db;
+
+        }
+
         if($request['owner']) {
             $business->owner = true;
             $business->save();
@@ -166,7 +154,7 @@ class BusinessController extends Controller
             $business->save();
         }
 
-        session()->flash('success', 'Your entry has been editted and will be reviewed shortly!');
+        session()->flash('success', 'Your entry has been updated!');
 
         return redirect()->route('dashboard.show');
     }
@@ -175,6 +163,8 @@ class BusinessController extends Controller
     public function destroy(Business $business)
     {
         $this->authorize('update', $business);
+
+        $deletedFile = Storage::delete('public/' . $business->image_path);
 
         $business->delete();
 

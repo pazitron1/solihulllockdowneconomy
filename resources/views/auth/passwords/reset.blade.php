@@ -5,7 +5,15 @@
 <div class="pb-16 lg:min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
   <div class="max-w-md w-full">
     <div>
-      <img class="mx-auto h-12 w-auto" src="{{asset('/logos/solihulllockdowneconomy-full.svg')}}" alt="Solihull Lockdown Economy" />
+      <div class="flex items-center justify-center">
+        <a href="/" class="flex-shrink-0 mr-2">
+            <img class="w-10 hover:opacity-75" src="{{asset('/logos/logo.png')}}" alt="Solihull Lockdown Economy" />
+        </a>
+        <div class="hidden md:block">
+            <span class="block text-base font-semibold leading-none">Solihull</span>
+            <span class="block text-sm font-semibold text-indigo-600 leading-none">lockdown economy</span>
+        </div>
+      </div>
       <h2 class="mt-6 text-center text-3xl leading-9 font-extrabold text-gray-900">
         Reset password
       </h2>

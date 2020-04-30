@@ -22,3 +22,7 @@ input:checked + svg {
     display: block;
 }
 
+[v-cloak] > * {
+    display:none;
+}
+
