@@ -30,7 +30,7 @@
                 We'll respond as soon as we can.
             </p>
             <p class="text-indigo-200 text-center text-sm">
-                <a class="underline hover:text-white" href="mailto:hello@domain.com">hello@domain.com</a>
+                <a class="underline hover:text-white" href="mailto:hello@domain.com">hello@solihulllockdowneconomy.com</a>
             </p>
         </div>
         <div class="flex justify-center mt-10">
