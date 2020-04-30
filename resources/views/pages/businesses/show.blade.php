@@ -1,5 +1,26 @@
 @extends('layouts.app')
 
+@section('meta')
+    <title>{{$business->name}} on Solihull Lockdown Economy</title>
+    <meta name="description" content="{{substr($business->description, 0, 180) . '...'}}"/>
+    <!-- Open Graph data -->
+    <meta prefix="og: http://ogp.me/ns#" property="og:title" content="{{$business->name}} on Solihull Lockdown Economy<" />
+    <meta prefix="og: http://ogp.me/ns#" property="og:type" content="website" />
+    <meta prefix="og: http://ogp.me/ns#" property="og:url" content="{{url()->current()}}" />
+    <meta prefix="og: http://ogp.me/ns#" property="og:image" content="{{asset($business->imagePath())}}" />
+    <meta prefix="og: http://ogp.me/ns#" property="og:description" content="{{substr($business->description, 0, 180) . '...'}}" />
+    <meta  prefix="og: http://ogp.me/ns#" property="og:site_name" content="The Solihull Lockdown Economy" />
+    <meta property="fb:app_id" content="1207509819640694">
+
+      <!-- Twitter META Tags -->
+    <meta property="twitter:site" content="@solihulllock">
+    <meta name=”twitter:url” content=”{{url()->current()}}” />
+    <meta property="twitter:title" content="{{$business->name}} on Solihull Lockdown Economy<">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:description" content="{{substr($business->description, 0, 180) . '...'}}">
+    <meta name="twitter:image" content="{{asset($business->imagePath())}}" />
+@endsection
+
 @section('content')
 <div class="bg-gray-100 min-h-screen pb-10">
     <div class="md:w-11/12 mx-auto px-6 lg:px-8">
@@ -39,7 +60,15 @@
                 </div>
             </div>
 
-            <div class="mt-6">
+            <div class="block md:flex justify-between mt-6">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <span class="text-xs md:text-sm text-gray-500 mr-2">
+                        Help spread the word ❤️
+                    </span>
+                    @include('_partials.share.facebook')
+                    @include('_partials.share.twitter')
+                </div>
+
                 <span class="text-xs md:text-sm text-gray-500">Something does not look right? <a href="{{route('contact.create')}}" class="text-indigo-500 hover:text-indigo-700">Let us know</a></span>
             </div>
 

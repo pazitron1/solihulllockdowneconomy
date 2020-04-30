@@ -18,7 +18,7 @@
     <meta property="twitter:title" content="Welcome to the Solihull Lockdown Economy">
     <meta name="twitter:card" content="summary_large_image">
     <meta property="twitter:description" content="Independent businesses in Solihull offering products and services during lockdown. Fresh produce, ready meals, supplies, mental health help, fitness classes and shops and more!">
-    <meta name=”twitter:image” content=”https://res.cloudinary.com/solihull-lockdown-economy/image/upload/dpr_auto,w_auto,f_auto,q_auto:good/v1588241085/SEO%20images/Home%20page/Social_media_banner_nqndzt.jpg” />
+    <meta name="twitter:image" content="https://res.cloudinary.com/solihull-lockdown-economy/image/upload/dpr_auto,w_auto,f_auto,q_auto:good/v1588241085/SEO%20images/Home%20page/Social_media_banner_nqndzt.jpg" />
 @endsection
 
 @section('content')
