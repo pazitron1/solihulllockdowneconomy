@@ -59,6 +59,9 @@
                     </div>
                     <div class="mb-8 relative">
                         <label class="text-sm text-gray-800 mb-2 pl-1 block" for="description">Short description of the business</label>
+                        <span class="pl-1 mb-2 text-gray-500 text-sm">
+                            No more than 500 characters please
+                        </span>
                         <textarea class="appearance-none placeholder-gray-500 text-gray-800 block w-full px-3 py-2 border border-gray-400 rounded-lg focus:outline-none focus:border-indigo-600 @error('description') border-red-500 @enderror" name="description" rows="4">{{old('description')}}</textarea>
                         @error('description')
                             <span class="absolute mt-1 text-red-500 text-sm">{{$message}}</span>
@@ -104,9 +107,9 @@
                     <div class="mb-8 relative">
                         <label class="text-sm text-gray-800 mb-1 pl-1 block" for="product_info">You lockdown offer</label>
                         <span class="pl-1 mb-2 text-gray-500 text-sm">
-                            No more than 100 characters please
+                            No more than 500 characters please
                         </span>
-                        <counter :limit="100" inline-template>
+                        <counter :limit="500" inline-template>
                             <div>
                                 <textarea v-model="message" @keyup="charCount()" class="appearance-none placeholder-gray-500 text-gray-800 block w-full px-4 py-3 border border-gray-400 rounded-lg focus:outline-none focus:border-indigo-600 @error('product_info') border-red-500 @enderror" name="product_info" rows="4">{{old('product_info')}}</textarea>
                                 <span class="absolute mr-4 bottom-0 right-0 text-gray-500 text-sm"
@@ -123,12 +126,12 @@
                     <div class="mb-8 relative">
                         <label class="text-sm text-gray-800 mb-1 pl-1 block" for="delivery_info">Please provide delivery or collection details</label>
                         <span class="pl-1 mb-2 text-gray-500 text-sm">
-                            No more than 255 characters please. Including social distancing measures if required
+                            No more than 500 characters please. Including social distancing measures if required
                         </span>
                         <span class="pl-1 mb-2 text-gray-500 text-sm">
 
                         </span>
-                        <counter :limit="255" inline-template>
+                        <counter :limit="500" inline-template>
                             <div>
                                 <textarea v-model="message" @keyup="charCount()" class="appearance-none placeholder-gray-500 text-gray-800 block w-full px-4 py-3 border border-gray-400 rounded-lg focus:outline-none focus:border-indigo-600 @error('delivery_info') border-red-500 @enderror" name="delivery_info" rows="4">{{old('delivery_info')}}</textarea>
                                 <span class="absolute mr-4 bottom-0 right-0 text-gray-500 text-sm"

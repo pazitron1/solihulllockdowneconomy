@@ -45,9 +45,9 @@ class BusinessController extends Controller
 
         $request->validate([
             'name' => 'required | max:200',
-            'description' => 'required | max:255',
-            'product_info' => 'required | max:100',
-            'delivery_info' => 'required | max:255',
+            'description' => 'required | max:500',
+            'product_info' => 'required | max:500',
+            'delivery_info' => 'required | max:500',
             'category_id' => 'required',
             'link' => 'nullable | url',
             'address_one' => 'required | max:255',
@@ -118,9 +118,9 @@ class BusinessController extends Controller
 
         $validatedData = $request->validate([
             'name' => 'required|max:200',
-            'description' => 'required|max:255',
-            'product_info' => 'required|max:255',
-            'delivery_info' => 'required|max:255',
+            'description' => 'required|max:500',
+            'product_info' => 'required|max:500',
+            'delivery_info' => 'required|max:500',
             'category_id' => 'required',
             'link' => 'nullable|url',
             'address_one' => 'required|max:255',

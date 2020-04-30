@@ -14,14 +14,14 @@
             </div>
             <h4 class="mt-1 text-gray-900 font-semibold text-lg">{{$business->name}}</h4>
             <div class="mt-1">
-                <span class="text-gray-700">{{$business->description}}</span>
+                <span class="text-gray-700">{{substr($business->description, 0, 100) . '...'}}</span>
             </div>
         </div>
         <div class="rounded-b-lg bg-indigo-100 shadow-lg p-4">
             <div class="flex items-baseline flex-wrap">
                 <span class="inline-block px-2 py-2 mb-2 leading-none bg-red-200 text-red-800 rounded-full font-semibold uppercase tracking-wide text-xs">Lockdown offer</span>
                 <div class="text-xs text-gray-600 font-semibold tracking-wide">
-                    {{$business->product_info}}
+                    {{substr($business->product_info, 0, 80) . "..."}}
                 </div>
             </div>
         </div>
