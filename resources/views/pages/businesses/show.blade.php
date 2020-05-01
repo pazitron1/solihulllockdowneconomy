@@ -4,7 +4,7 @@
     <title>{{$business->name}} on Solihull Lockdown Economy</title>
     <meta name="description" content="{{substr($business->description, 0, 180) . '...'}}"/>
     <!-- Open Graph data -->
-    <meta prefix="og: http://ogp.me/ns#" property="og:title" content="{{$business->name}} on Solihull Lockdown Economy<" />
+    <meta prefix="og: http://ogp.me/ns#" property="og:title" content="{{$business->name}} on Solihull Lockdown Economy" />
     <meta prefix="og: http://ogp.me/ns#" property="og:type" content="website" />
     <meta prefix="og: http://ogp.me/ns#" property="og:url" content="{{url()->current()}}" />
     <meta prefix="og: http://ogp.me/ns#" property="og:image" content="{{asset($business->imagePath())}}" />
