@@ -49,7 +49,7 @@
                         <p class="mt-3 mb-4 md:mb-10 text-sm text-gray-800 sm:mt-2 md:mt-5 md:text-base lg:mx-0">{{$business->delivery_info}}</p>
                     </div>
                     <div class="w-full">
-                        <a href="{{$business->link}}" target="_blank" class="w-full border border-transparent text-base leading-6 font-medium rounded-md text-indigo-700 bg-indigo-100 hover:text-indigo-600 hover:bg-indigo-50 focus:outline-none focus:shadow-outline focus:border-indigo-300 transition duration-150 ease-in-out py-2 px-6 md:py-4 md:text-lg md:px-10">
+                        <a href="{{$business->link}}?utm_source=solihulllockdowneconomy&utm_medium=web" target="_blank" class="w-full border border-transparent text-base leading-6 font-medium rounded-md text-indigo-700 bg-indigo-100 hover:text-indigo-600 hover:bg-indigo-50 focus:outline-none focus:shadow-outline focus:border-indigo-300 transition duration-150 ease-in-out py-2 px-6 md:py-4 md:text-lg md:px-10">
                         Visit website
                         </a>
                     </div>
