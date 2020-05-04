@@ -118,7 +118,7 @@ class BusinessController extends Controller
 
         $validatedData = $request->validate([
             'name' => 'required|max:200',
-            'description' => 'required|max:500',
+            'description' => 'required|max:1000',
             'product_info' => 'required|max:500',
             'delivery_info' => 'required|max:500',
             'category_id' => 'required',
