@@ -18,12 +18,12 @@ class BusinessController extends Controller
         if ($categorySlug) {
             $categoryId = Category::where('slug', $categorySlug)->first()->id;
 
-            $listings = Business::where('category_id', $categoryId)->paginate(10);
+            $listings = Business::where('category_id', $categoryId)->paginate(12);
         } else {
              if ($request->has('recent')) {
-                $listings = Business::whereDate('created_at', Carbon::today())->paginate(10);
+                $listings = Business::whereDate('created_at', Carbon::today())->paginate(12);
             } else {
-                $listings = Business::orderBy('created_at', 'desc')->paginate(10);
+                $listings = Business::orderBy('created_at', 'desc')->paginate(12);
             }
         }
 

@@ -11,6 +11,7 @@
     <meta prefix="og: http://ogp.me/ns#" property="og:description" content="{{substr($business->description, 0, 180) . '...'}}" />
     <meta  prefix="og: http://ogp.me/ns#" property="og:site_name" content="The Solihull Lockdown Economy" />
     <meta property="fb:app_id" content="1207509819640694">
+
       <!-- Twitter META Tags -->
     <meta property="twitter:site" content="@solihulllock">
     <meta name=”twitter:url” content=”{{url()->current()}}” />
